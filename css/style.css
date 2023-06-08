@@ -542,10 +542,10 @@ border: 1px solid rgba(46, 47, 66, 0.4);
 padding-left: 38px;
 background-color: transparent;
 outline: transparent;
-transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 
 .modal-form-input:focus{
-    border-color: 1px solid #4D5AE5;
+    border-color:#4D5AE5;
     outline: none;
 }
 .modal-form-input:focus + .modal-form-input-icon{
@@ -598,7 +598,7 @@ margin-bottom: 4px;}
     background-color: transparent;
     outline: transparent;
 
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-comment::placeholder{
     font-family: 'Roboto';
@@ -611,37 +611,49 @@ color: rgba(46, 47, 66, 0.4);
 }
 
 .modal-form-comment:focus{
-    border-color: 1px solid #4D5AE5;
+    border-color:#4D5AE5;
     outline: none;
 }
 
-.modal-form-check-desc{max-width: 360px;
-    display: flex;
+.modal-form-check-desc{
+    display: inline-flex;
     align-items: center;
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 1.17;
-letter-spacing: 0.04em;
-color:var(--form-color);
-margin-bottom: 24px;
-}
-
-.modal-form-check-desc::before{
-    content: "";
-    display: block;
+    justify-content: center;
+    fill: transparent;
+    
     width: 16px;
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
     cursor: pointer;
     margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-check:checked + .modal-form-check-desc::before{
+/* .modal-form-check-desc::before{
+    content: "";
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
+
+.modal-form-check:checked + .modal-form-check-desc{
     background-color:var(--ocean-color);
-    background-image:url(../images/Vector.svg)
+    border: none;
+    fill: var(--white-color);
 }
 
 .visually-hidden{
@@ -761,5 +773,7 @@ margin-left: 16px;}
 
 .modal-form-container{
     margin-bottom: 8px;}
+
+.modal-form-container-comment{margin-bottom: 16px;}
 
 .modal-form-checkbox{margin-bottom: 24px;}
